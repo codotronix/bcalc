@@ -1,0 +1,44 @@
+:root {
+    --calc-color-fg: #ccc
+}
+.root {
+    background: #000;
+    color: var(--calc-color-fg);
+    height: 100%;
+    width: 100%;
+}
+.innerContiner {
+    width: 350px;
+    /* border: 1px solid var(--calc-color-fg); */
+    min-height: 550px;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+.display {
+    border: 1px solid var(--calc-color-fg);
+    font-size: 24px;
+    font-family: monospace;
+    padding: 7px 10px;
+    width: 82%;
+    margin: 0 auto;
+    display: block;
+    border-radius: 7px;
+}
+.btnsPanel {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 290px;
+    gap: 15px 10px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+.btnsPanel .btn {
+    font-size: 20px;
+    border: 1px solid var(--calc-color-fg);
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
