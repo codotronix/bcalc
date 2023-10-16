@@ -18,11 +18,15 @@
     border: 1px solid var(--calc-color-fg);
     font-size: 24px;
     font-family: monospace;
-    padding: 7px 10px;
+    padding: 0 10px;
     width: 82%;
+    height: 50px;
     margin: 0 auto;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: left;
     border-radius: 7px;
+    overflow: auto;
 }
 .btnsPanel {
     display: grid;
@@ -41,6 +45,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    user-select: none;
 }
 .btnsPanel .btn:hover,
 .btnsPanel .btn:active {

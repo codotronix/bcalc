@@ -3,7 +3,7 @@ import styles from "./Calc.module.css"
 const Display = ({ txt }) => {
     return (
         <div className={styles.display}>
-            {txt}
+            {txt || '0'}
         </div>
     )
 }
