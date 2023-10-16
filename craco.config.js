@@ -1,11 +1,12 @@
 const { ModuleFederationPlugin } = require("webpack").container;
 const ExternalTemplateRemotesPlugin = require("external-remotes-plugin");
-
+// console.log(process.env.NODE_ENV)
+// debugger
 module.exports = {
   webpack: {
     configure: {
       output: {
-        publicPath: "https://codotronix.github.io/bcalc/",
+        publicPath: process.env.NODE_ENV === 'development' ? '/' : "https://codotronix.github.io/bcalc/",
       },
       entry: './src/index.js',
       plugins: [
