@@ -19,7 +19,10 @@ module.exports = {
           exposes: {
             "./BCalc": "./src/components/calculator/Calc"
           },
-          //   shared: {react: {singleton: true}, "react-dom": {singleton: true}},
+          shared: {
+            react: { singleton: true, eager: true },
+            'react-dom': { singleton: true, eager: true },
+          },
         }),
 
         new ExternalTemplateRemotesPlugin(),
