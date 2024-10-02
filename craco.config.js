@@ -7,6 +7,7 @@ module.exports = {
     configure: {
       output: {
         publicPath: process.env.NODE_ENV === 'development' ? '/' : "https://codotronix.github.io/bcalc/",
+        // publicPath: "http://localhost:3001/",
       },
       entry: './src/index.js',
       plugins: [
@@ -17,7 +18,7 @@ module.exports = {
           //     test: "test@https://codotronix.github.io/test/remoteEntry.js",
           //   },
           exposes: {
-            "./BCalc": "./src/components/calculator/Calc"
+            "./BCalc": "./src/components/calculator/BCalc"
           },
           shared: {
             react: { singleton: true, eager: true },

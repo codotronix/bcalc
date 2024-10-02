@@ -1,17 +1,22 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import styles from "./Calc.module.css"
 import Display from "./Display"
 import Buttons from "./Buttons"
 
-const Calc = () => {
+const Calc = (props) => {
+    const { initTxt='', forceUpdate } = props
     const [txt, setTxt] = useState('')
+
+    useEffect(() => {
+        setTxt(initTxt)
+    }, [initTxt, forceUpdate])
 
     const btnClicked = c => {
         c = c.toString()    // Convert it to Char, 'coz we append
 
         // Preformatting
         // Square is ** in JS
-        if(c === '^') c = '**'
+        // if(c === '^') c = '**'
 
         // if C=Clear is pressed ?
         if(c === 'C') setTxt('')
@@ -19,7 +24,9 @@ const Calc = () => {
         // if Solve (=) is pressed
         else if(c === '=') {
             try {
-                setTxt(eval(txt))
+                // Replace ^ with ** for power operation
+                const _txt = txt.replace(/\^/g, '**')
+                setTxt(eval(_txt))
             }
             catch (err) {
                 console.log(err)
@@ -46,11 +53,8 @@ const Calc = () => {
     return (
         <div className={styles.root}>
             <div className={styles.innerContiner}>
-                
                 <Display txt={txt} />
-
                 <Buttons onBtnClick={btnClicked} />
-
             </div>
         </div>
     )
